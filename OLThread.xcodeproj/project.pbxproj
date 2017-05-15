@@ -24,6 +24,8 @@
 		851F63791EA39D7C00BAF6E9 /* OLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 851F63781EA39D7C00BAF6E9 /* OLThread.m */; };
 		851F63831EA3B31400BAF6E9 /* OLLoadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851F63811EA3B31400BAF6E9 /* OLLoadImageViewController.m */; };
 		851F63841EA3B31400BAF6E9 /* OLLoadImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851F63821EA3B31400BAF6E9 /* OLLoadImageViewController.xib */; };
+		85361E151EC9DE9400845BED /* OLGCDBarrierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85361E131EC9DE9400845BED /* OLGCDBarrierViewController.m */; };
+		85361E161EC9DE9400845BED /* OLGCDBarrierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85361E141EC9DE9400845BED /* OLGCDBarrierViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		851F63801EA3B31400BAF6E9 /* OLLoadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLLoadImageViewController.h; sourceTree = "<group>"; };
 		851F63811EA3B31400BAF6E9 /* OLLoadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLLoadImageViewController.m; sourceTree = "<group>"; };
 		851F63821EA3B31400BAF6E9 /* OLLoadImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLLoadImageViewController.xib; sourceTree = "<group>"; };
+		85361E121EC9DE9400845BED /* OLGCDBarrierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGCDBarrierViewController.h; sourceTree = "<group>"; };
+		85361E131EC9DE9400845BED /* OLGCDBarrierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGCDBarrierViewController.m; sourceTree = "<group>"; };
+		85361E141EC9DE9400845BED /* OLGCDBarrierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLGCDBarrierViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,9 @@
 				851F636D1EA3608900BAF6E9 /* OLGCDViewController.h */,
 				851F636E1EA3608900BAF6E9 /* OLGCDViewController.m */,
 				851F636F1EA3608900BAF6E9 /* OLGCDViewController.xib */,
+				85361E121EC9DE9400845BED /* OLGCDBarrierViewController.h */,
+				85361E131EC9DE9400845BED /* OLGCDBarrierViewController.m */,
+				85361E141EC9DE9400845BED /* OLGCDBarrierViewController.xib */,
 				851F63721EA360D100BAF6E9 /* OLNSOperationViewController.h */,
 				851F63731EA360D100BAF6E9 /* OLNSOperationViewController.m */,
 				851F63741EA360D100BAF6E9 /* OLNSOperationViewController.xib */,
@@ -183,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85361E161EC9DE9400845BED /* OLGCDBarrierViewController.xib in Resources */,
 				8503AFE51EA2465500E8518D /* LaunchScreen.storyboard in Resources */,
 				851F63761EA360D100BAF6E9 /* OLNSOperationViewController.xib in Resources */,
 				8503AFE21EA2465500E8518D /* Assets.xcassets in Resources */,
@@ -207,6 +216,7 @@
 				8503AFDA1EA2465500E8518D /* AppDelegate.m in Sources */,
 				851F63661EA3606300BAF6E9 /* OLPthreadViewController.m in Sources */,
 				851F63751EA360D100BAF6E9 /* OLNSOperationViewController.m in Sources */,
+				85361E151EC9DE9400845BED /* OLGCDBarrierViewController.m in Sources */,
 				851F636B1EA3607300BAF6E9 /* OLNSThreadViewController.m in Sources */,
 				851F63701EA3608900BAF6E9 /* OLGCDViewController.m in Sources */,
 				8503AFD71EA2465500E8518D /* main.m in Sources */,
@@ -331,10 +341,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OLThread/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.olive.OLThread;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -342,10 +357,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OLThread/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.olive.OLThread;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

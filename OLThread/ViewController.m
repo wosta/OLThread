@@ -13,9 +13,10 @@
 #import "OLGCDViewController.h"
 #import "OLNSOperationViewController.h"
 #import "OLLoadImageViewController.h"
+#import "OLGCDBarrierViewController.h"
 
 static NSString  *ViewControllerReusableCellWithIdentifierID = @"ViewControllerReusableCellWithIdentifierID";
-static NSInteger tableNumber = 5;
+static NSInteger tableNumber = 6;
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 /** name */
@@ -72,12 +73,15 @@ static NSInteger tableNumber = 5;
     }else if (indexPath.row == 4) {
         OLLoadImageViewController *vc = [[OLLoadImageViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 5){
+        OLGCDBarrierViewController *vc = [[OLGCDBarrierViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = [[NSArray alloc] initWithObjects:@"pthread", @"NSThread", @"GCD", @"NSOperation", @"loadImage", nil];
+        _dataArray = [[NSArray alloc] initWithObjects:@"pthread", @"NSThread", @"GCD", @"NSOperation", @"loadImage", @"GCDBarrier", nil];
     }
     return _dataArray;
 }

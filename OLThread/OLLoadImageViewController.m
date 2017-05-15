@@ -2,7 +2,7 @@
 //  OLLoadImageViewController.m
 //  OLThread
 //
-//  Created by 魏旺 on 2017/4/16.
+//  Created by olive on 2017/4/16.
 //  Copyright © 2017年 olive. All rights reserved.
 //
 
@@ -25,7 +25,9 @@
         imageView;
     });
     [self.view addSubview:self.imgView];
-    [self downLoad01];
+//    [self downLoad01];
+    [self downloadImgWithGCD];
+    
 }
 
 - (void)downLoad01 {
@@ -61,6 +63,20 @@
     // 所以下面这种方法会更简便 // 这样的话我们就不用调用下面的方法了。
     [self.imgView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
     
+}
+
+- (void)downloadImgWithGCD {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *url = [NSURL URLWithString:@"http://img4.duitang.com/uploads/blog/201310/18/20131018213446_smUw4.thumb.700_0.jpeg"];
+        NSData *imgData = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [UIImage imageWithData:imgData];
+        
+        NSLog(@"===%@", [NSThread currentThread]);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self viewImageView:img];
+        });
+    });
 }
 
 - (void)viewImageView:(UIImage *)image {
